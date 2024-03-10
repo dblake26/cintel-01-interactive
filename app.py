@@ -28,3 +28,17 @@ def histogram():
     
     #Show the plot 
     plt.show()
+    
+# Create a 2D histogram plot    
+@render.plot(alt="2D histogram plot")
+def histogram_2d():
+    count_of_point: int = 500
+    np.random.seed(42)
+    x = np.random.randn(count_of_point)
+    y = np.random.randn(count_of_point)
+    plt.hist2d(x=x, y=y, bins=input.selected_number_of_bins(), cmap = "RdYlGn_r")
+
+  #Set labels and title 
+    plt.xlabel('Value')
+    plt.ylabel('Density')
+    plt.title('2D Distribution')
